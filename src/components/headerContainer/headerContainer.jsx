@@ -2,19 +2,12 @@ import { Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
 import { NavLink } from 'react-router-dom';
 import css from './headerContainer.module.css';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { isLoginUser } from 'store/getSelectors';
-import { username } from 'store/getSelectors';
-import { logOut } from 'store/auth/authOperations';
+import UserMenu from 'components/userMenu/userMenu';
 
 const Header = () => {
-  const dispatch = useDispatch();
   const isLogin = useSelector(isLoginUser);
-  const user = useSelector(username);
-
-  const logOutUser = () => {
-    dispatch(logOut());
-  };
 
   return (
     <div className={css.container}>
@@ -54,15 +47,8 @@ const Header = () => {
                   </NavLink>
                 </li>
               </ul>
-            </nav>
-            <div className={css.user__box}>
-              <p className={css.user__text}>
-                Hi, <span className={css.user__accent}>{user}</span>!
-              </p>
-              <button onClick={logOutUser} className={css.logout}>
-                Logout
-              </button>
-            </div>
+              </nav>
+              <UserMenu/>
           </div>
         )}
       </header>

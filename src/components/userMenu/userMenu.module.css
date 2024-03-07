@@ -1,0 +1,25 @@
+.user__box {
+  margin-left: auto;
+  display: flex;
+}
+
+.logout {
+  margin-left: 15px;
+  color: white;
+  text-decoration: none;
+  padding: 5px;
+  border: 1px solid #fa464f;
+  background-color: #fa464f;
+  border-radius: 5px;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 17px;
+  font-weight: 300;
+}
+
+.user__text {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 17px;
+  font-weight: 300;
+  color: black;
+  margin: auto 0;
+}
