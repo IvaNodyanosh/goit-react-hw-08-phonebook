@@ -1,0 +1,56 @@
+.contactForm{
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.contactForm__icon{
+    width: 30px;
+    height: auto;
+    fill: #14d6fc;
+    margin-right: 10px;
+}
+
+.contactForm > label{
+    justify-content: center;
+    display: flex;
+}
+
+.contactForm > label{
+    margin-right: 20px;
+
+}
+
+.contactForm > label:last-of-type{
+    margin-right: 10px;
+}
+
+.contactForm__iconAdd{
+    height: auto;
+    width: 30px;
+    fill: white;
+}
+
+.contactForm__button{
+    padding: 2px 10px;
+    background-color: #4bf27b;
+    border: transparent;
+    border-radius: 7px;
+    color: white;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.contactForm input{
+    padding: 5px 10px;
+    border-radius: 7px;
+    border: 1px solid #14d6fc;
+    background-color: white;
+    color: slategray;
+
+    font-family: 'Exo 2', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+}
+

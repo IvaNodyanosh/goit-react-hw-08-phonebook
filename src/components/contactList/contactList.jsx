@@ -4,18 +4,28 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getFilter } from 'store/getSelectors';
 import { getContacts } from 'store/getSelectors';
 import { deleteContact } from 'store/contacts/contactsOperation';
+import { useEffect } from 'react';
+import { fetchContacts } from 'store/contacts/contactsOperation';
+import { isLoginUser } from 'store/getSelectors';
 
 export const ContactList = () => {
-
   const filter = useSelector(getFilter);
   const contacts = useSelector(getContacts);
-   const dispatch = useDispatch();
+  const isLogin = useSelector(isLoginUser);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (isLogin) {
+      dispatch(fetchContacts());
+    }
+  }, [dispatch, isLogin]);
 
   const filterObjects = contacts.filter(contact =>
     contact.name.toLowerCase().includes(filter.toLowerCase())
   );
 
-   const handleRemoveContact = contact => dispatch(deleteContact(contact));
+  const handleRemoveContact = contact => dispatch(deleteContact(contact));
 
   const removeContact = e => {
     const { id } = e.currentTarget;

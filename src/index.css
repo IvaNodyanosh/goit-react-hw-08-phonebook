@@ -7,6 +7,16 @@ ul, li a, p, h1, h2, h3{
     
 }
 
+body{
+    background-color: white;
+}
+
 ul{
     list-style: none;
 }
+
+li .active{
+    background-color: #14d6fc;
+    color: white;
+}
+
